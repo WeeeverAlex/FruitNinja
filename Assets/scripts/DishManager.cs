@@ -1,23 +1,31 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 using System.Linq;
 
 public class DishManager : MonoBehaviour
 {
     public GameObject[] fishPrefabs;
     public GameObject ricePrefab;
-    public TextMeshProUGUI[] dishDisplays;
+
+    public Image[] dishImages; 
+    public Sprite[] dishSprites; 
+    public Sprite riceSprite; 
+    public Sprite collectedRiceSprite; 
+    public Sprite[] ingredientSprites; 
+    public Sprite[] collectedIngredientSprites; 
+
     private List<Dish> dishes = new List<Dish>();
     private GameManager gameManager;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        if (gameManager == null) {
-        Debug.LogError("GameManager not found on the same GameObject.");
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found.");
         }
-        GenerateRandomDishes(2); 
+        GenerateRandomDishes(2);
     }
 
     private void GenerateRandomDishes(int count)
@@ -25,12 +33,20 @@ public class DishManager : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             Dish newDish = new Dish();
-            string fish = fishPrefabs[Random.Range(0, fishPrefabs.Length)].name;
+            int fishIndex = Random.Range(0, fishPrefabs.Length);
+            string fish = fishPrefabs[fishIndex].name;
+
             newDish.ingredients[fish] = 1;
             newDish.ingredients[ricePrefab.name] = 1;
+            newDish.dishSprite = dishSprites[fishIndex];
+            newDish.ingredientSprites[fish] = ingredientSprites[fishIndex];
+            newDish.collectedIngredientSprites[fish] = collectedIngredientSprites[fishIndex];
+            newDish.ingredientSprites[ricePrefab.name] = riceSprite;
+            newDish.collectedIngredientSprites[ricePrefab.name] = collectedRiceSprite;
+
             dishes.Add(newDish);
         }
-        DisplayDishes(); 
+        DisplayDishes();
     }
 
     public void IngredientSliced(string ingredient)
@@ -52,31 +68,62 @@ public class DishManager : MonoBehaviour
         foreach (Dish completedDish in completedDishes)
         {
             dishes.Remove(completedDish);
-            GenerateRandomDishes(1); 
+            GenerateRandomDishes(1);
             gameManager.AddScore(100);
             gameManager.AddTime(5f);
         }
 
-        DisplayDishes(); 
+        DisplayDishes();
     }
 
     private void DisplayDishes()
     {
-        for (int i = 0; i < dishDisplays.Length; i++)
+        for (int i = 0; i < dishImages.Length; i++)
         {
             if (i < dishes.Count)
             {
-                var ingredientsText = dishes[i].ingredients
-                    .Where(kv => kv.Value > 0)
-                    .Select(kv => kv.Key + " x" + kv.Value)
-                    .ToArray();
+                Dish dish = dishes[i];
+                var ingredientKeys = dish.ingredients.Keys.ToArray();
 
-                dishDisplays[i].text = string.Join(" + ", ingredientsText);
+                
+                Transform dishTransform = dishImages[i].transform;
+                Image pratoImage = dishTransform.Find("Prato").GetComponent<Image>();
+                Image ingrediente1Image = dishTransform.Find("Ingrediente1").GetComponent<Image>();
+                Image ingrediente2Image = dishTransform.Find("Ingrediente2").GetComponent<Image>();
+
+                
+                pratoImage.sprite = dish.dishSprite;
+
+                
+                if (ingredientKeys[0] == ricePrefab.name)
+                {
+                    ingrediente1Image.sprite = GetIngredientSprite(dish, ingredientKeys[0]);
+                    ingrediente2Image.sprite = GetIngredientSprite(dish, ingredientKeys[1]);
+                }
+                else
+                {
+                    ingrediente1Image.sprite = GetIngredientSprite(dish, ingredientKeys[1]);
+                    ingrediente2Image.sprite = GetIngredientSprite(dish, ingredientKeys[0]);
+                }
+
+                dishImages[i].gameObject.SetActive(true);
             }
             else
             {
-                dishDisplays[i].text = "";
+                dishImages[i].gameObject.SetActive(false);
             }
+        }
+    }
+
+    private Sprite GetIngredientSprite(Dish dish, string ingredient)
+    {
+        if (dish.ingredients[ingredient] > 0)
+        {
+            return dish.ingredientSprites[ingredient];
+        }
+        else
+        {
+            return dish.collectedIngredientSprites[ingredient];
         }
     }
 }
@@ -84,4 +131,7 @@ public class DishManager : MonoBehaviour
 public class Dish
 {
     public Dictionary<string, int> ingredients = new Dictionary<string, int>();
+    public Sprite dishSprite; 
+    public Dictionary<string, Sprite> ingredientSprites = new Dictionary<string, Sprite>(); 
+    public Dictionary<string, Sprite> collectedIngredientSprites = new Dictionary<string, Sprite>(); 
 }
