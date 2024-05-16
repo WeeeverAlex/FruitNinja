@@ -13,7 +13,10 @@ public class DishManager : MonoBehaviour
 
     private void Start()
     {
-        gameManager = GetComponent<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
+        if (gameManager == null) {
+        Debug.LogError("GameManager not found on the same GameObject.");
+        }
         GenerateRandomDishes(2); 
     }
 

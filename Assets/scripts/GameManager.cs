@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void AddTime(float amount)
     {
+        Debug.Log("oi");
         remainingTime += amount;
     }
 
