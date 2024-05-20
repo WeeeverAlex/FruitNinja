@@ -21,7 +21,6 @@ public class Fruit : MonoBehaviour
 
     private void Slice(Vector2 direction, Vector2 position, float force)
     {
-
         fruitCollider.enabled = false;
         whole.SetActive(false);
         sliced.SetActive(true);
@@ -43,15 +42,15 @@ public class Fruit : MonoBehaviour
         {
             dishManager.IngredientSliced(ingredientName);
         }
-
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("player"))
         {
             Blade blade = other.GetComponent<Blade>();
             Slice(blade.Direction, blade.transform.position, blade.sliceForce);
+            VibrationManager.Vibrate(100); // Chame o método estático diretamente
         }
     }
 }

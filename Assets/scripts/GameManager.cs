@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private float remainingTime;
     private int score;
     private bool gameIsOver = false;
+    private int scoreMultiplier = 1;
 
     private void Start()
     {
@@ -38,19 +39,17 @@ public class GameManager : MonoBehaviour
         if (gameIsOver)
         {
             SceneManager.LoadScene("GameOver");
-
         }
     }
 
     public void AddScore(int amount)
     {
-        score += amount;
+        score += amount * scoreMultiplier;
         UpdateScoreText();
     }
 
     public void AddTime(float amount)
     {
-        Debug.Log("oi");
         remainingTime += amount;
     }
 
@@ -67,6 +66,10 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         gameIsOver = true;
-        
+    }
+
+    public void SetScoreMultiplier(int multiplier)
+    {
+        scoreMultiplier = multiplier;
     }
 }

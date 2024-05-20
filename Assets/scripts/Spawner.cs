@@ -68,4 +68,3 @@ public class Spawner : MonoBehaviour
         gameIsOver = true;
     }
 }
-

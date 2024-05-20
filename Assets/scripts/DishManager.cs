@@ -85,16 +85,13 @@ public class DishManager : MonoBehaviour
                 Dish dish = dishes[i];
                 var ingredientKeys = dish.ingredients.Keys.ToArray();
 
-                
                 Transform dishTransform = dishImages[i].transform;
                 Image pratoImage = dishTransform.Find("Prato").GetComponent<Image>();
                 Image ingrediente1Image = dishTransform.Find("Ingrediente1").GetComponent<Image>();
                 Image ingrediente2Image = dishTransform.Find("Ingrediente2").GetComponent<Image>();
 
-                
                 pratoImage.sprite = dish.dishSprite;
 
-                
                 if (ingredientKeys[0] == ricePrefab.name)
                 {
                     ingrediente1Image.sprite = GetIngredientSprite(dish, ingredientKeys[0]);
@@ -125,6 +122,25 @@ public class DishManager : MonoBehaviour
         {
             return dish.collectedIngredientSprites[ingredient];
         }
+    }
+    
+    public void CompleteAllDishes()
+    {
+        int completedDishesCount = dishes.Count;
+
+        foreach (Dish dish in dishes.ToList())
+        {
+            foreach (var ingredient in dish.ingredients.Keys.ToList())
+            {
+                dish.ingredients[ingredient] = 0;
+            }
+            gameManager.AddScore(100);
+            gameManager.AddTime(5f);
+        }
+
+        dishes.Clear();
+        GenerateRandomDishes(completedDishesCount);
+        DisplayDishes();
     }
 }
 
