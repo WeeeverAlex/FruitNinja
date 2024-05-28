@@ -173,9 +173,11 @@ MonoBehaviour:
   - {fileID: 1277171923433266687, guid: 728693928563f6d45a3d5aa831c5620c, type: 3}
   - {fileID: 1277171923433266687, guid: 70ff6995ea9705749989527b99654695, type: 3}
   - {fileID: 1277171923433266687, guid: 63cd659f6d5978a448a53a947a6e2c10, type: 3}
-  - {fileID: 1277171923433266687, guid: ca0c333abe4799547bc08b9f50a98a94, type: 3}
+  ricePrefab: {fileID: 1277171923433266687, guid: ca0c333abe4799547bc08b9f50a98a94, type: 3}
   minSpawnDelay: 0.75
   maxSpawnDelay: 3
+  minRiceSpawnDelay: 0.1
+  maxRiceSpawnDelay: 0.5
   minAngle: -15
   maxAngle: 15
   minForce: 9
