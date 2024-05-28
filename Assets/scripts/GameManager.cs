@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
+        AdsManager.Instance.ShowAd();
         gameIsOver = true;
     }
 
