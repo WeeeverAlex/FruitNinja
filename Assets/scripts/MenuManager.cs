@@ -4,8 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public void LoadScene()
+    public void jogo()
     {
         SceneManager.LoadScene("GameScene");
+    }
+    public void options()
+    {
+        SceneManager.LoadScene("Options");
     }
 }
