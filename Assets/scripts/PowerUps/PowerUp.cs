@@ -14,6 +14,11 @@ public abstract class PowerUp : MonoBehaviour
     protected GameManager gameManager;
     protected PowerUpSpawner spawner; 
 
+    public delegate void PowerUpDeactivated();
+    public event PowerUpDeactivated OnPowerUpDeactivated;
+
+    private bool isSliced = false;
+
     private void Awake()
     {
         powerUpRigidbody = GetComponent<Rigidbody2D>();
@@ -22,8 +27,28 @@ public abstract class PowerUp : MonoBehaviour
         spawner = FindObjectOfType<PowerUpSpawner>(); 
     }
 
+    public void Initialize(PowerUpSpawner spawner, string powerUpName, float maxLifetime)
+    {
+        this.spawner = spawner;
+        this.powerUpName = powerUpName;
+        StartCoroutine(DestroyAfterTime(maxLifetime));
+    }
+
+    private IEnumerator DestroyAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (!isSliced)
+        {
+            OnPowerUpDeactivated?.Invoke();
+            Destroy(gameObject);
+        }
+    }
+
     private void Slice(Vector2 direction, Vector2 position, float force)
     {
+        if (isSliced) return;
+
+        isSliced = true;
         powerUpCollider.enabled = false;
         whole.SetActive(false);
         sliced.SetActive(true);
@@ -43,7 +68,6 @@ public abstract class PowerUp : MonoBehaviour
 
         Debug.Log($"Power-up {powerUpName} activated.");
         StartCoroutine(PowerUpEffect());
-        Destroy(gameObject, 5f); 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -67,6 +91,7 @@ public abstract class PowerUp : MonoBehaviour
     protected virtual void DeactivatePowerUp()
     {
         Debug.Log($"Power-up {powerUpName} deactivated after {duration} seconds.");
-        spawner.DeactivatePowerUp(powerUpName);
+        OnPowerUpDeactivated?.Invoke();
+        Destroy(gameObject);
     }
 }

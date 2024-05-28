@@ -42,6 +42,8 @@ public class PowerUpSpawner : MonoBehaviour
     {
         while (!gameIsOver)
         {
+            List<GameObject> availablePowerUps = new List<GameObject>();
+
             foreach (var powerUpPrefab in powerUpPrefabs)
             {
                 string powerUpName = powerUpPrefab.name;
@@ -55,12 +57,20 @@ public class PowerUpSpawner : MonoBehaviour
                     }
                     else if (Time.time >= powerUpCooldowns[powerUpName])
                     {
-                        SpawnObject(powerUpPrefab);
-                        activePowerUps.Add(powerUpName);
-                        powerUpCooldowns.Remove(powerUpName);
+                        availablePowerUps.Add(powerUpPrefab);
                     }
                 }
             }
+
+            if (availablePowerUps.Count > 0)
+            {
+                GameObject powerUpToSpawn = availablePowerUps[Random.Range(0, availablePowerUps.Count)];
+                SpawnObject(powerUpToSpawn);
+                string spawnedPowerUpName = powerUpToSpawn.name;
+                activePowerUps.Add(spawnedPowerUpName);
+                powerUpCooldowns.Remove(spawnedPowerUpName);
+            }
+
             yield return new WaitForSeconds(1f); 
         }
     }
@@ -77,10 +87,16 @@ public class PowerUpSpawner : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
 
         GameObject obj = Instantiate(prefab, position, rotation);
-        Destroy(obj, maxLifetime);
 
         float force = Random.Range(minPowerUpForce, maxPowerUpForce);
         obj.GetComponent<Rigidbody2D>().AddForce(Vector2.up * force, ForceMode2D.Impulse);
+
+        PowerUp powerUp = obj.GetComponent<PowerUp>();
+        if (powerUp != null)
+        {
+            powerUp.Initialize(this, prefab.name, maxLifetime);
+            powerUp.OnPowerUpDeactivated += () => DeactivatePowerUp(prefab.name);
+        }
     }
 
     public void DeactivatePowerUp(string powerUpName)

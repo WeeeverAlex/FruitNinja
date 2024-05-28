@@ -556,5 +556,5 @@ MonoBehaviour:
   whole: {fileID: 4420882602964231549}
   sliced: {fileID: 7990118800835803219}
   powerUpName: prato_feito
-  duration: 50
-  cooldown: 2
+  duration: 1
+  cooldown: 30

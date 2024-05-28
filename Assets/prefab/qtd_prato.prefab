@@ -556,6 +556,6 @@ MonoBehaviour:
   whole: {fileID: 4420882602964231549}
   sliced: {fileID: 7990118800835803219}
   powerUpName: qtd_prato
-  duration: 5
-  cooldown: 2
-  increasedRate: 0.7
+  duration: 15
+  cooldown: 30
+  increasedRate: 0.4

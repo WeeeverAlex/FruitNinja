@@ -17,6 +17,8 @@ public class DishManager : MonoBehaviour
 
     private List<Dish> dishes = new List<Dish>();
     private GameManager gameManager;
+    
+    private  bool precisa_cortar;
 
     private void Start()
     {
@@ -51,6 +53,7 @@ public class DishManager : MonoBehaviour
 
     public void IngredientSliced(string ingredient)
     {
+        precisa_cortar = false;
         List<Dish> completedDishes = new List<Dish>();
         foreach (Dish dish in dishes.ToList())
         {
@@ -61,10 +64,15 @@ public class DishManager : MonoBehaviour
                 {
                     completedDishes.Add(dish);
                 }
+                precisa_cortar = true;
                 break;
             }
         }
 
+        if (!precisa_cortar)
+        {
+            gameManager.RemoveTime(5f);
+        }
         foreach (Dish completedDish in completedDishes)
         {
             dishes.Remove(completedDish);

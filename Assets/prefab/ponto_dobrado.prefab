@@ -461,7 +461,7 @@ Transform:
   m_GameObject: {fileID: 8261651880308160763}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: -0.838474, z: 0.03129301}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -557,5 +557,5 @@ MonoBehaviour:
   sliced: {fileID: 7990118800835803219}
   powerUpName: ponto_dobrado
   duration: 15
-  cooldown: 2
+  cooldown: 15
   scoreMultiplier: 2
