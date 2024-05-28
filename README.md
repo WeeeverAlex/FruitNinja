@@ -1,7 +1,7 @@
-# FruitNinja
+# SushiMaker
 
 ## Descrição
-FruitNinja é um jogo baseado no popular jogo Fruit Ninja, mas com uma temática de culinária. O objetivo é cortar os ingredientes corretos que aparecem na tela para preparar pratos específicos. Com power-ups emocionantes e uma variedade de sushis para fazer, o jogo oferece uma experiência divertida e desafiadora.
+O objetivo é cortar os ingredientes corretos que aparecem na tela para preparar pratos específicos. Com power-ups emocionantes e uma variedade de sushis para fazer, o jogo oferece uma experiência divertida e desafiadora.
 
 ## Funcionalidades
 - **Corte de Ingredientes:** Corte os ingredientes que aparecem na tela para preparar os pratos.
