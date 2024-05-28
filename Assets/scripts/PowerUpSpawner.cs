@@ -95,17 +95,16 @@ public class PowerUpSpawner : MonoBehaviour
         if (powerUp != null)
         {
             powerUp.Initialize(this, prefab.name, maxLifetime);
-            powerUp.OnPowerUpDeactivated += () => DeactivatePowerUp(prefab.name);
+            powerUp.OnPowerUpDeactivated += () => DeactivatePowerUp(prefab.name, powerUp.cooldown);
         }
     }
 
-    public void DeactivatePowerUp(string powerUpName)
+    public void DeactivatePowerUp(string powerUpName, float cooldown)
     {
         if (activePowerUps.Contains(powerUpName))
         {
             activePowerUps.Remove(powerUpName);
-            float spawnDelay = Random.Range(minPowerUpSpawnDelay, maxPowerUpSpawnDelay);
-            powerUpCooldowns[powerUpName] = Time.time + spawnDelay;
+            powerUpCooldowns[powerUpName] = Time.time + cooldown;
         }
     }
 

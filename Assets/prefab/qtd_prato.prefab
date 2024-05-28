@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &966431851642836919
 Transform:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8150028823943430107
 Transform:
   m_ObjectHideFlags: 0
@@ -557,5 +557,5 @@ MonoBehaviour:
   sliced: {fileID: 7990118800835803219}
   powerUpName: qtd_prato
   duration: 15
-  cooldown: 30
+  cooldown: 23
   increasedRate: 0.4

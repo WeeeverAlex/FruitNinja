@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &966431851642836919
 Transform:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8150028823943430107
 Transform:
   m_ObjectHideFlags: 0
@@ -553,8 +553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7120b978dd0332343b89ebc4ca93a82a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whole: {fileID: 0}
-  sliced: {fileID: 0}
+  whole: {fileID: 4420882602964231549}
+  sliced: {fileID: 7990118800835803219}
   powerUpName: slow_motion
   duration: 8
   cooldown: 45
