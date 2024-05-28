@@ -8,8 +8,11 @@ public class Spawner : MonoBehaviour
     private Collider2D spawnArea;
 
     public GameObject[] fruitPrefabs;
+    public GameObject ricePrefab; 
     public float minSpawnDelay = 0.25f;
     public float maxSpawnDelay = 1f;
+    public float minRiceSpawnDelay = 0.1f; 
+    public float maxRiceSpawnDelay = 0.5f; 
 
     public float minAngle = -15f;
     public float maxAngle = 15f;
@@ -42,12 +45,27 @@ public class Spawner : MonoBehaviour
 
         while (!gameIsOver)
         {
-            GameObject prefab = fruitPrefabs[Random.Range(0, fruitPrefabs.Length)];
+            
+            bool spawnRice = Random.value < 0.5f; 
+
+            GameObject prefab;
+            float spawnDelay;
+
+            if (spawnRice)
+            {
+                prefab = ricePrefab;
+                spawnDelay = Random.Range(minRiceSpawnDelay, maxRiceSpawnDelay);
+            }
+            else
+            {
+                prefab = fruitPrefabs[Random.Range(0, fruitPrefabs.Length)];
+                spawnDelay = Random.Range(minSpawnDelay, maxSpawnDelay);
+            }
 
             Vector2 position = new Vector2
             {
                 x = Random.Range(spawnArea.bounds.min.x, spawnArea.bounds.max.x),
-                y = spawnArea.bounds.max.y  
+                y = spawnArea.bounds.max.y
             };
 
             float angle = Random.Range(minAngle, maxAngle);
@@ -59,7 +77,7 @@ public class Spawner : MonoBehaviour
             float force = Random.Range(minForce, maxForce);
             fruit.GetComponent<Rigidbody2D>().AddForce(Vector2.up * force, ForceMode2D.Impulse);
 
-            yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
+            yield return new WaitForSeconds(spawnDelay);
         }
     }
 
