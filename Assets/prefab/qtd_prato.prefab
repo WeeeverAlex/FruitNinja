@@ -558,4 +558,4 @@ MonoBehaviour:
   powerUpName: qtd_prato
   duration: 15
   cooldown: 23
-  increasedRate: 0.4
+  increasedRate: 0.1

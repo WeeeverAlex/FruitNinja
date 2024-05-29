@@ -176,12 +176,12 @@ MonoBehaviour:
   ricePrefab: {fileID: 1277171923433266687, guid: ca0c333abe4799547bc08b9f50a98a94, type: 3}
   minSpawnDelay: 0.75
   maxSpawnDelay: 3
-  minRiceSpawnDelay: 0.1
-  maxRiceSpawnDelay: 0.5
+  minRiceSpawnDelay: 0.5
+  maxRiceSpawnDelay: 3
   minAngle: -15
   maxAngle: 15
   minForce: 9
-  maxForce: 16
+  maxForce: 14
   maxLifetime: 5
 --- !u!61 &197595876
 BoxCollider2D:
