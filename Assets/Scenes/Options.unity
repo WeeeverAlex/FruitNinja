@@ -810,14 +810,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   content: "<style=\"Title\">TUTORIAL</style>\n\n<page>Peixes devem ser cortados   
-    \n\n         <sprite name=\"peixelaranja\">\n\n<page>Arroz devem ser cortados
-    \n\n          <sprite name=\"arroz\">\n\n<page>Prato precisa ser conclu\xEDdo\n\n           
-    <sprite name=\"sushi\">\n\n<page>Prato totalmente conclu\xEDdo, aumenta o tempo
-    de jogo em 5 segundos\n\n\t<sprite name=\"sushicheck\">\n\n<page>Peixe cortado,
-    sem estar nos pedidos, diminu\xED o tempo de jogo em 5 segundos\n\n\t<sprite
-    name=\"peixevermelho\">\n\n<page><style=\"Title\">PODERES</style>\n\n<page>Completa
-    todos os pratos    \n\n           <sprite name=\"raio\"> \n\n<page> Aumenta quantidade
-    de ingredientes    \n\n            <sprite name=\"gravidade\">\n\n<page>Deixa
+    \n\n         <sprite name=\"peixelaranja\">\n\n<page>Arroz deve ser cortado\n\n         
+    <sprite name=\"arroz\">\n\n<page>Pratos precisam ser conclu\xEDdos\n\n           
+    <sprite name=\"sushi\">\n\n<page>Prato totalmente conclu\xEDdo! Tempo de jogo
+    aumenta em 5 segundos\n\n\t<sprite name=\"sushicheck\">\n\n<page>Peixe cortado,
+    sem estar nos pedidos! Tempo de jogo diminu\xED em 5 segundos\n\n\t<sprite name=\"peixevermelho\">\n\n<page><style=\"Title\">PODERES</style>\n\n<page>Todos
+    os pratos s\xE3o completados    \n\n           <sprite name=\"raio\"> \n\n<page>Aumenta
+    quantidade de ingredientes na tela  \n\n            <sprite name=\"gravidade\">\n\n<page>Deixa
     o jogo em Slowmotion\n\t\n          <sprite name=\"tempo\">\n\n<page>Dobro de
     pontos    \n\n          <sprite name=\"dois\"> \n\n<page><style=\"Title\">FIM</style>\n\n"
   leftSide: {fileID: 2051525263}
@@ -1361,14 +1360,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<style=\"Title\">TUTORIAL</style>\n\n<page>Peixes devem ser cortados   
-    \n\n         <sprite name=\"peixelaranja\">\n\n<page>Arroz devem ser cortados
-    \n\n          <sprite name=\"arroz\">\n\n<page>Prato precisa ser conclu\xEDdo\n\n           
-    <sprite name=\"sushi\">\n\n<page>Prato totalmente conclu\xEDdo, aumenta o tempo
-    de jogo em 5 segundos\n\n\t<sprite name=\"sushicheck\">\n\n<page>Peixe cortado,
-    sem estar nos pedidos, diminu\xED o tempo de jogo em 5 segundos\n\n\t<sprite
-    name=\"peixevermelho\">\n\n<page><style=\"Title\">PODERES</style>\n\n<page>Completa
-    todos os pratos    \n\n           <sprite name=\"raio\"> \n\n<page> Aumenta quantidade
-    de ingredientes    \n\n            <sprite name=\"gravidade\">\n\n<page>Deixa
+    \n\n         <sprite name=\"peixelaranja\">\n\n<page>Arroz deve ser cortado\n\n         
+    <sprite name=\"arroz\">\n\n<page>Pratos precisam ser conclu\xEDdos\n\n           
+    <sprite name=\"sushi\">\n\n<page>Prato totalmente conclu\xEDdo! Tempo de jogo
+    aumenta em 5 segundos\n\n\t<sprite name=\"sushicheck\">\n\n<page>Peixe cortado,
+    sem estar nos pedidos! Tempo de jogo diminu\xED em 5 segundos\n\n\t<sprite name=\"peixevermelho\">\n\n<page><style=\"Title\">PODERES</style>\n\n<page>Todos
+    os pratos s\xE3o completados    \n\n           <sprite name=\"raio\"> \n\n<page>Aumenta
+    quantidade de ingredientes na tela  \n\n            <sprite name=\"gravidade\">\n\n<page>Deixa
     o jogo em Slowmotion\n\t\n          <sprite name=\"tempo\">\n\n<page>Dobro de
     pontos    \n\n          <sprite name=\"dois\"> \n\n<page><style=\"Title\">FIM</style>\n\n"
   m_isRightToLeft: 0
@@ -1507,14 +1505,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<style=\"Title\">TUTORIAL</style>\n\n<page>Peixes devem ser cortados   
-    \n\n         <sprite name=\"peixelaranja\">\n\n<page>Arroz devem ser cortados
-    \n\n          <sprite name=\"arroz\">\n\n<page>Prato precisa ser conclu\xEDdo\n\n           
-    <sprite name=\"sushi\">\n\n<page>Prato totalmente conclu\xEDdo, aumenta o tempo
-    de jogo em 5 segundos\n\n\t<sprite name=\"sushicheck\">\n\n<page>Peixe cortado,
-    sem estar nos pedidos, diminu\xED o tempo de jogo em 5 segundos\n\n\t<sprite
-    name=\"peixevermelho\">\n\n<page><style=\"Title\">PODERES</style>\n\n<page>Completa
-    todos os pratos    \n\n           <sprite name=\"raio\"> \n\n<page> Aumenta quantidade
-    de ingredientes    \n\n            <sprite name=\"gravidade\">\n\n<page>Deixa
+    \n\n         <sprite name=\"peixelaranja\">\n\n<page>Arroz deve ser cortado\n\n         
+    <sprite name=\"arroz\">\n\n<page>Pratos precisam ser conclu\xEDdos\n\n           
+    <sprite name=\"sushi\">\n\n<page>Prato totalmente conclu\xEDdo! Tempo de jogo
+    aumenta em 5 segundos\n\n\t<sprite name=\"sushicheck\">\n\n<page>Peixe cortado,
+    sem estar nos pedidos! Tempo de jogo diminu\xED em 5 segundos\n\n\t<sprite name=\"peixevermelho\">\n\n<page><style=\"Title\">PODERES</style>\n\n<page>Todos
+    os pratos s\xE3o completados    \n\n           <sprite name=\"raio\"> \n\n<page>Aumenta
+    quantidade de ingredientes na tela  \n\n            <sprite name=\"gravidade\">\n\n<page>Deixa
     o jogo em Slowmotion\n\t\n          <sprite name=\"tempo\">\n\n<page>Dobro de
     pontos    \n\n          <sprite name=\"dois\"> \n\n<page><style=\"Title\">FIM</style>\n\n"
   m_isRightToLeft: 0
