@@ -23,17 +23,7 @@ O objetivo é cortar os ingredientes corretos que aparecem na tela para preparar
 3. **Utilize Power-Ups:** Ative os power-ups quando disponíveis para obter vantagens adicionais.
 4. **Complete os Pratos:** Cada prato completo aumenta sua pontuação. Tente completar o máximo de pratos possível para obter uma pontuação alta.
 
-
-## Requisitos do Sistema
-- **Plataformas Suportadas:** 
-- **Requisitos de Hardware:** 
-- **Requisitos de Software:**
-
-
-## Instalação
-1. **Baixe o Jogo:** [Link para download do jogo]
-2. **Instale:** Siga as instruções do instalador para instalar o jogo no seu dispositivo.
-3. **Jogue:** Abra o jogo e comece a jogar!
+[sushi_maker_gdd_v5.pdf](https://github.com/WeeeverAlex/SushiMaker/files/15483039/sushi_maker_gdd_v5.pdf)
 
 
 
