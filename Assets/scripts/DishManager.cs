@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,10 +16,14 @@ public class DishManager : MonoBehaviour
     public Sprite[] ingredientSprites; 
     public Sprite[] collectedIngredientSprites; 
 
+    public AudioClip dishCompletedSound; 
+    public AudioClip wrongIngredientSound; 
+    public AudioSource audioSource; 
+
     private List<Dish> dishes = new List<Dish>();
     private GameManager gameManager;
     
-    private  bool precisa_cortar;
+    private bool precisa_cortar;
 
     private void Start()
     {
@@ -71,14 +76,27 @@ public class DishManager : MonoBehaviour
 
         if (!precisa_cortar)
         {
+            
+            if (audioSource != null && wrongIngredientSound != null)
+            {
+                audioSource.PlayOneShot(wrongIngredientSound);
+            }
+
             gameManager.RemoveTime(5f);
         }
+
         foreach (Dish completedDish in completedDishes)
         {
             dishes.Remove(completedDish);
             GenerateRandomDishes(1);
             gameManager.AddScore(100);
             gameManager.AddTime(5f);
+
+            
+            if (audioSource != null && dishCompletedSound != null)
+            {
+                audioSource.PlayOneShot(dishCompletedSound);
+            }
         }
 
         DisplayDishes();
@@ -131,7 +149,7 @@ public class DishManager : MonoBehaviour
             return dish.collectedIngredientSprites[ingredient];
         }
     }
-    
+
     public void CompleteAllDishes()
     {
         int completedDishesCount = dishes.Count;

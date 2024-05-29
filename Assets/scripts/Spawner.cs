@@ -45,7 +45,6 @@ public class Spawner : MonoBehaviour
 
         while (!gameIsOver)
         {
-            
             bool spawnRice = Random.value < 0.5f; 
 
             GameObject prefab;

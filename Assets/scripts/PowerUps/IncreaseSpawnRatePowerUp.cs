@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class IncreaseSpawnRatePowerUp : PowerUp
 {
-    public float increasedRate = 0.1f;
+    public float spawnIntervalMultiplier = 0.1f; 
+    public AudioClip powerUpSound;
+    public AudioSource audioSource;
 
     protected override void ActivatePowerUp()
     {
@@ -12,16 +14,31 @@ public class IncreaseSpawnRatePowerUp : PowerUp
 
     protected override IEnumerator PowerUpEffect()
     {
-        float originalMinSpawnDelay = FindObjectOfType<Spawner>().minSpawnDelay;
-        float originalMaxSpawnDelay = FindObjectOfType<Spawner>().maxSpawnDelay;
+        
+        if (audioSource != null && powerUpSound != null)
+        {
+            audioSource.PlayOneShot(powerUpSound);
+        }
 
-        FindObjectOfType<Spawner>().minSpawnDelay = increasedRate;
-        FindObjectOfType<Spawner>().maxSpawnDelay = increasedRate;
+        
+        Spawner spawner = FindObjectOfType<Spawner>();
+        if (spawner != null)
+        {
+            
+            float originalMinSpawnDelay = spawner.minSpawnDelay;
+            float originalMaxSpawnDelay = spawner.maxSpawnDelay;
 
-        yield return new WaitForSeconds(duration);
+            
+            spawner.minSpawnDelay *= spawnIntervalMultiplier;
+            spawner.maxSpawnDelay *= spawnIntervalMultiplier;
 
-        FindObjectOfType<Spawner>().minSpawnDelay = originalMinSpawnDelay;
-        FindObjectOfType<Spawner>().maxSpawnDelay = originalMaxSpawnDelay;
+            
+            yield return new WaitForSeconds(duration);
+
+            
+            spawner.minSpawnDelay = originalMinSpawnDelay;
+            spawner.maxSpawnDelay = originalMaxSpawnDelay;
+        }
 
         DeactivatePowerUp();
     }

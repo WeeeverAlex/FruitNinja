@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Fruit : MonoBehaviour
@@ -7,6 +6,8 @@ public class Fruit : MonoBehaviour
     public GameObject whole;
     public GameObject sliced;
     public string ingredientName;
+    public AudioClip sliceSound; 
+    public AudioSource audioSource; 
 
     private Rigidbody2D fruitRigidbody;
     private Collider2D fruitCollider;
@@ -38,6 +39,12 @@ public class Fruit : MonoBehaviour
             }
         }
 
+        
+        if (audioSource != null && sliceSound != null)
+        {
+            audioSource.PlayOneShot(sliceSound);
+        }
+
         if (dishManager != null)
         {
             dishManager.IngredientSliced(ingredientName);
@@ -50,7 +57,7 @@ public class Fruit : MonoBehaviour
         {
             Blade blade = other.GetComponent<Blade>();
             Slice(blade.Direction, blade.transform.position, blade.sliceForce);
-            VibrationManager.Vibrate(100); // Chame o método estático diretamente
+            VibrationManager.Vibrate(100); 
         }
     }
 }

@@ -174,10 +174,10 @@ MonoBehaviour:
   - {fileID: 1277171923433266687, guid: 70ff6995ea9705749989527b99654695, type: 3}
   - {fileID: 1277171923433266687, guid: 63cd659f6d5978a448a53a947a6e2c10, type: 3}
   ricePrefab: {fileID: 1277171923433266687, guid: ca0c333abe4799547bc08b9f50a98a94, type: 3}
-  minSpawnDelay: 0.75
-  maxSpawnDelay: 3
+  minSpawnDelay: 0.5
+  maxSpawnDelay: 2.5
   minRiceSpawnDelay: 0.5
-  maxRiceSpawnDelay: 3
+  maxRiceSpawnDelay: 2.5
   minAngle: -15
   maxAngle: 15
   minForce: 9
@@ -705,7 +705,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.015178, y: -5.502014}
+  m_Offset: {x: 0.8884423, y: -5.502014}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -716,7 +716,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.9353814, y: 0.9248009}
+  m_Size: {x: 3.499041, y: 0.9248009}
   m_EdgeRadius: 0
 --- !u!1 &601737427
 GameObject:
@@ -813,6 +813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 778876105}
   - component: {fileID: 778876104}
+  - component: {fileID: 778876106}
   m_Layer: 0
   m_Name: DishManager
   m_TagString: Untagged
@@ -858,6 +859,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 00aca7a2dc5b7d64f9f75f93d55cbfa6, type: 3}
   - {fileID: 21300000, guid: b1b4242a8d519c4468964f860eaf6769, type: 3}
   - {fileID: 21300000, guid: d65e2e16f8055c740852785eb123332d, type: 3}
+  dishCompletedSound: {fileID: 8300000, guid: c46cff284e0378d49be891f558558220, type: 3}
+  wrongIngredientSound: {fileID: 8300000, guid: df7e74a7cf0eb184e8ef2e3f622aa2b7, type: 3}
+  audioSource: {fileID: 778876106}
 --- !u!4 &778876105
 Transform:
   m_ObjectHideFlags: 0
@@ -873,6 +877,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &778876106
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778876103}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c46cff284e0378d49be891f558558220, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &784062837
 GameObject:
   m_ObjectHideFlags: 0
