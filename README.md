@@ -34,4 +34,4 @@ O objetivo é cortar os ingredientes corretos que aparecem na tela para preparar
 ## Contato
 Para dúvidas e suporte, entre em contato através do email: [eduburrodemais@gmail.com]
 
-Divirta-se jogando FruitNinja!
+Divirta-se jogando SushiMaker!
