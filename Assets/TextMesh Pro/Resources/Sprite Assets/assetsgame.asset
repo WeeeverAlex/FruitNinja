@@ -84,57 +84,57 @@ MonoBehaviour:
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 0
-    m_Scale: 1
-    m_Name: assetsgame_0
-    m_HashCode: 1681640450
+    m_Scale: 3
+    m_Name: peixevermelho
+    m_HashCode: -661677597
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 1
-    m_Scale: 1
-    m_Name: assetsgame_2
-    m_HashCode: 1681640448
+    m_Scale: 3
+    m_Name: arroz
+    m_HashCode: 119075988
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 2
-    m_Scale: 1
-    m_Name: assetsgame_3
-    m_HashCode: 1681640449
+    m_Scale: 3
+    m_Name: sushi
+    m_HashCode: 134676756
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 3
-    m_Scale: 1
-    m_Name: assetsgame_4
-    m_HashCode: 1681640454
+    m_Scale: 3
+    m_Name: sushicheck
+    m_HashCode: -1356159726
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 4
-    m_Scale: 1
-    m_Name: assetsgame_1
-    m_HashCode: 1681640451
+    m_Scale: 3
+    m_Name: peixelaranja
+    m_HashCode: -312628134
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 5
-    m_Scale: 1
-    m_Name: assetsgame_5
-    m_HashCode: 1681640455
+    m_Scale: 3
+    m_Name: raio
+    m_HashCode: 4134133
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 6
-    m_Scale: 1
-    m_Name: assetsgame_7
-    m_HashCode: 1681640453
+    m_Scale: 3
+    m_Name: gravidade
+    m_HashCode: 2100637167
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 7
-    m_Scale: 1
-    m_Name: assetsgame_8
-    m_HashCode: 1681640458
+    m_Scale: 3
+    m_Name: tempo
+    m_HashCode: 134054339
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 8
-    m_Scale: 1
-    m_Name: assetsgame_6
-    m_HashCode: 1681640452
+    m_Scale: 3
+    m_Name: dois
+    m_HashCode: 3493297
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
