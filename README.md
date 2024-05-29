@@ -23,7 +23,13 @@ O objetivo é cortar os ingredientes corretos que aparecem na tela para preparar
 3. **Utilize Power-Ups:** Ative os power-ups quando disponíveis para obter vantagens adicionais.
 4. **Complete os Pratos:** Cada prato completo aumenta sua pontuação. Tente completar o máximo de pratos possível para obter uma pontuação alta.
 
+
+
+## GDD
 [sushi_maker_gdd_v5.pdf](https://github.com/WeeeverAlex/SushiMaker/files/15483039/sushi_maker_gdd_v5.pdf)
+
+## Itch.io
+[itch.io](https://weeeveralex.itch.io/sushi-maker)
 
 
 
